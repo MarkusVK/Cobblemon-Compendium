@@ -1,0 +1,5 @@
+The purpose of this file is to document the work done for ADRL Summer of Code challenge.
+Each time the project is worked on an itial commit will be made to this file logging the start time. At the end another commit will be made including a small description of the work being made.
+The format of a time stamp: [day-month-year-week: hour.minute]
+
+[02-04-2026-W14: 10.40] Work Start
