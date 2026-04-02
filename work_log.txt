@@ -3,3 +3,5 @@ Each time the project is worked on an itial commit will be made to this file log
 The format of a time stamp: [day-month-year-week: hour.minute]
 
 [02-04-2026-W14: 10.40] Work Start
+[02-04-2026-W14: 13:05] Work End
+Started by figuring out what languages and frameworks to use. Time was then primarily spendt on reading documentation and following tutorials to better understand how to use ASP.NET.
