@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add CORS so React can be used
 builder.Services.AddCors(options => 
 {
-    options.AddPolicy("AllowReact", builder => 
+    options.AddPolicy("AllowAngularApp", builder => 
     {
-        builder.WithOrigins("https://localhost:5001")
+        builder.WithOrigins("https://localhost:4200")
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
@@ -18,13 +18,12 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-builder.Services.AddDbContext<TestContext>(options =>
-        options.UseInMemoryDatabase("TestList"));
+builder.Services.AddDbContext<CobblemonContext>(options =>
+        options.UseInMemoryDatabase("CobblemonList"));
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
