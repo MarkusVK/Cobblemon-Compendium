@@ -9,3 +9,5 @@ Started by figuring out what languages and frameworks to use. Time was then prim
 [03-04-2026-W14: 10.25] Work Start
 [03-04-2026-W14: 12:30] Work End
 More documentation reading and made a very simple api for getting part of a cobblemon info from json files.
+
+[04-0-4-2026-W14: 14.25] Work Start
