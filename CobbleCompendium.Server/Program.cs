@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<CobblemonContext>(options =>
-        options.UseInMemoryDatabase("CobblemonList"));
+        options.UseSqlite("Data Source=./Database/CobblemonCompendium.db"));
 
 var app = builder.Build();
 
