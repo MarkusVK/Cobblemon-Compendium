@@ -7,6 +7,7 @@ public class Cobblemon{
     [Key]
     public int Id { get; set; }
     public int PokedexNumber { get; set; }
+    public Generations Generation { get; set; }
     public required string Name { get; set; }
     public required Type PrimaryType { get; set; }
     public Type? SecondaryType { get; set; }
