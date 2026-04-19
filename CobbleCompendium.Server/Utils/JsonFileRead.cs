@@ -6,15 +6,15 @@ public class JsonFileReader
 {
     private readonly JsonSerializerOptions options = new() { PropertyNameCaseInsensitive = true};
 
-    public async Task<List<T>> ReadJson<T>(string filePath){
+    public async Task<T> ReadJson<T>(string filePath){
         try
         {
             if (!File.Exists(filePath))
                 throw new FileNotFoundException($"File {filePath} could not be found");
 
             var json = await File.ReadAllTextAsync(filePath);
-            var data = JsonSerializer.Deserialize<List<T>>(json, options);
-            return data ?? [];
+            var data = JsonSerializer.Deserialize<T>(json, options);
+            return data!;
         }
         catch (JsonException ex)
         {

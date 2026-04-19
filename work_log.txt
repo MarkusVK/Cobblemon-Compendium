@@ -19,3 +19,5 @@ Started preparing backend to use Sqlite and defined some of the classes the data
 Began work on data seeders to load data from json files and into the database and did some studying on useful OOP patterns and concepts such as Data Transfer Objects (DTOs).
 
 [19-04-2026-W16: 19:17] Work Start
+[19-04-2026-W16: 20:25] Work End
+Studied DTOs a bit more indept along with how to use assemblers with them. Expanded on the cobblemonDTO and hopefully finished the seeders so things are soon ready to be run and debugged.

@@ -27,8 +27,9 @@ namespace CobbleCompendium.Server.Controllers
         [HttpGet("{name}")]
         public async Task<ActionResult<CobblemonItem>> GetCobblemonByName(string name)
         {
-            CobblemonItem cobblemonItem = fileReader.GetCobblemon(name);
-            return cobblemonItem;
+            var cobblemon = _context.CobblemonItems.SingleOrDefault(cobblemon => cobblemon.name == name);
+            if (cobblemon is null) return NotFound();
+            return Ok(cobblemon);
         }
     }
 }

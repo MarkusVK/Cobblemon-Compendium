@@ -9,9 +9,9 @@ public class Cobblemon{
     public int PokedexNumber { get; set; }
     public Generations Generation { get; set; }
     public required string Name { get; set; }
-    public required Type PrimaryType { get; set; }
-    public Type? SecondaryType { get; set; }
-    public int MaleRation { get; set; }
+    public Types PrimaryType { get; set; }
+    public Types? SecondaryType { get; set; }
+    public int MaleRatio { get; set; }
 
     // Stats
     public int Hp { get; set; }
