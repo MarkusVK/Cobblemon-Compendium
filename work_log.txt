@@ -17,3 +17,5 @@ Started preparing backend to use Sqlite and defined some of the classes the data
 [12-04-2026-W15: 14:00] Work Start
 [12-04-2026-W15: 16:35] Work End
 Began work on data seeders to load data from json files and into the database and did some studying on useful OOP patterns and concepts such as Data Transfer Objects (DTOs).
+
+[19-04-2026-W16: 19:17] Work Start
