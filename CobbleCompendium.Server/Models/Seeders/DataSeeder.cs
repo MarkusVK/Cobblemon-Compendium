@@ -1,6 +1,6 @@
 using CobbleCompendium.Server.Utils;
 
-namespace CobbleCompendium.Server.Database.Seeders;
+namespace CobbleCompendium.Server.Models.Seeders;
 
 public class DataSeeder(params ISeederStrategy[] seeders)
 {

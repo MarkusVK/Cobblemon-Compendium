@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using CobbleCompendium.Server.Models.Items;
 
 namespace CobbleCompendium.Server.Models;
 
-public class CobblemonContext : DbContext 
+public class CobblemonContext(DbContextOptions<CobblemonContext> options) : DbContext(options) 
 {
-    public CobblemonContext(DbContextOptions<CobblemonContext> options) : base(options) {}
+    private readonly string databasePath = Path.Combine("..","Database","CobblemonDatbase.db");
 
-    public DbSet<CobblemonItem> CobblemonItems { get; set; } = null!;
+    public DbSet<Cobblemon> Cobblemons { get; set; } = null!;
+    protected override void OnConfiguring(DbContextOptionsBuilder options) 
+        => options.UseSqlite($"Data Source={databasePath}");
 }

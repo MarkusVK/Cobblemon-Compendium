@@ -27,10 +27,10 @@ public record CobblemonDTO(
     Drops Drops,
     string[] Moves,
     string PreEvolution,
-    Evolution[] Evolutions,
-    CobblemonDTO Forms,
-    string Riding,
-    bool Rideable
+    Evolution[] Evolutions
+    //CobblemonDTO Forms,
+    //string Riding,
+    //bool Rideable
 );
 
 public record Stats(

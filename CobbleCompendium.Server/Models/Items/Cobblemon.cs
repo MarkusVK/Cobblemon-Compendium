@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using CobbleCompendium.Server.Utils;
 
-namespace CobbleCompendium.Server.Database.Tables;
+namespace CobbleCompendium.Server.Models.Items;
 
 public class Cobblemon{
     [Key]

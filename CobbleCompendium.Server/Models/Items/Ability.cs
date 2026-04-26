@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CobbleCompendium.Server.Database.Tables;
+namespace CobbleCompendium.Server.Models.Items;
 
 public class Ability{
     [Key]

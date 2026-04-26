@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CobbleCompendium.Server.Models;
 using CobbleCompendium.Server.Utils;
-using CobbleCompendium.Server.Database.Seeders;
+using CobbleCompendium.Server.Models.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,14 +23,13 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<CobblemonContext>(options =>
         options.UseSqlite("Data Source=./Database/CobblemonCompendium.db"));
 
-builder.Services.AddScoped<JsonFileReader>();
-builder.Services.AddScoped<DataSeeder>();
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope()){
     var dbContext = scope.ServiceProvider.GetRequiredService<CobblemonContext>();
-    var seeder = scope.ServiceProvider.GetRequiredService<DataSeeder>();
+    JsonFileReader fileReader = new();
+    CobblemonSeeder cobblemonSeeder = new(dbContext, fileReader);
+    DataSeeder seeder = new(cobblemonSeeder);
 
     await seeder.SeedAsync();
 }

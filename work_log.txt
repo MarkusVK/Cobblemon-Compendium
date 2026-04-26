@@ -23,3 +23,5 @@ Began work on data seeders to load data from json files and into the database an
 Studied DTOs a bit more indept along with how to use assemblers with them. Expanded on the cobblemonDTO and hopefully finished the seeders so things are soon ready to be run and debugged.
 
 [26-04-2026-W17: 13:15] Work Start
+[26-04-2026-W17: 16:20] Work End
+Changed the structure of the project a bit and fixed some problems so cobblemons now can be loaded into the sqlite database. 

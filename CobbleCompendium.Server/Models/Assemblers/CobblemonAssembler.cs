@@ -1,5 +1,5 @@
 using CobbleCompendium.Server.Models.DTOs;
-using CobbleCompendium.Server.Database.Tables;
+using CobbleCompendium.Server.Models.Items;
 using CobbleCompendium.Server.Utils;
 
 namespace CobbleCompendium.Server.Models.Assemblers;
@@ -10,7 +10,7 @@ public class CobblemonAssembler{
     public Cobblemon CreateCobblemon(CobblemonDTO cobblemonDTO){
         Stats stats = cobblemonDTO.BaseStats;
         Types primaryType = typeConverter.StringToType(cobblemonDTO.PrimaryType);
-        Types? secondaryType = cobblemonDTO.SecondaryType is null ? typeConverter.StringToType(cobblemonDTO.PrimaryType) : null;
+        Types? secondaryType = cobblemonDTO.SecondaryType != null ? typeConverter.StringToType(cobblemonDTO.SecondaryType) : null;
         Generations generation = GetGeneration(cobblemonDTO.Labels);
 
         Cobblemon result = new()
@@ -49,13 +49,15 @@ public class CobblemonAssembler{
                 case "gen6": 
                     return Generations.Gen6;
                 case "gen7": 
+                case "gen7b":
                     return Generations.Gen7;
-                case "gen8": 
+                case "gen8":
+                case "gen8a":
                     return Generations.Gen8;
                 case "gen9": 
                     return Generations.Gen9;
             }
         }
-        throw new Exception($"Couldn't find generation in {labels}");
+        throw new Exception($"Couldn't find generation in [{string.Join("'",labels)}]");
     }
 }
