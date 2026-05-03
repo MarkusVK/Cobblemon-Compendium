@@ -1,0 +1,29 @@
+<h1>{{ title() }}</h1>
+<table mat-table [dataSource]="dataSource()" class="mat-elevation-z8">
+  <!-- Pokedex Column -->
+  <ng-container matColumnDef="pokedexNumber">
+    <th mat-header-cell *matHeaderCellDef> Pokedex Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.pokedexNumber}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Primary Type Column -->
+  <ng-container matColumnDef="primaryType">
+    <th mat-header-cell *matHeaderCellDef> Primary Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.primaryType}} </td>
+  </ng-container>
+
+  <!-- Secondary Type Column -->
+  <ng-container matColumnDef="secondaryType">
+    <th mat-header-cell *matHeaderCellDef> Secondary Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.secondaryType}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

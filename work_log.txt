@@ -25,3 +25,7 @@ Studied DTOs a bit more indept along with how to use assemblers with them. Expan
 [26-04-2026-W17: 13:15] Work Start
 [26-04-2026-W17: 16:20] Work End
 Changed the structure of the project a bit and fixed some problems so cobblemons now can be loaded into the sqlite database. 
+
+[03-05-2026-W18: ~13:30]
+[03-05-2026-W18: 16:30] Work End
+Got a bit carried away so forgot to update the worklog when I started working. Some small fixes was made to the backend to allow Angular to make API requests. The primary focus was to start the frontend development which consisted of studying and following tutorials so an API request now is made to the backend which loads all cobblemon into a simple table.

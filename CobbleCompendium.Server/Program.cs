@@ -10,7 +10,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", builder => 
     {
-        builder.WithOrigins("https://localhost:4200")
+        builder.WithOrigins("http://localhost:4200")
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
@@ -45,7 +45,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseCors("AllowReactApp");
+app.UseCors("AllowAngularApp");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
